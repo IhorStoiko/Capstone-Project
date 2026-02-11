@@ -91,12 +91,12 @@ class BikeShareSystem:
         # --- Step 2: Parse dates ---
         self.trips["start_time"] = pd.to_datetime(self.trips["start_time"])
         self.trips["end_time"] = pd.to_datetime(self.trips["end_time"])
-        self.stations["install_date"] = pd.to_datetime(self.stations["install_date"], errors='coerce')
+        #self.stations["install_date"] = pd.to_datetime(self.stations["install_date"], errors='coerce')
 
         # --- Step 3: Convert numeric columns ---
         self.trips["duration_minutes"] = pd.to_numeric(self.trips["duration_minutes"], errors='coerce')
         self.trips["distance_km"] = pd.to_numeric(self.trips["distance_km"], errors='coerce')
-        self.maintenance["cost_eur"] = pd.to_numeric(self.maintenance["cost_eur"], errors='coerce')
+        self.maintenance["cost"] = pd.to_numeric(self.maintenance["cost"], errors='coerce')
 
         # --- Step 4: Handle missing values ---
         self.trips["duration_minutes"].fillna(self.trips["duration_minutes"].median(), inplace=True)
@@ -134,7 +134,7 @@ class BikeShareSystem:
     def top_start_stations(self, n: int = 10) -> pd.DataFrame:
         counts = self.trips["start_station_id"].value_counts().head(n).reset_index()
         counts.columns = ["station_id", "trip_count"]
-        return counts.merge(self.stations[["station_id", "name"]], on="station_id").sort_values(by="trip_count", ascending=False)
+        return counts.merge(self.stations[["station_id", "station_name"]], on="station_id").sort_values(by="trip_count", ascending=False)
 
     def peak_usage_hours(self) -> pd.Series:
         return self.trips["start_time"].dt.hour.value_counts().sort_index()
@@ -152,7 +152,7 @@ class BikeShareSystem:
         return self.trips.groupby("user_id").size().sort_values(ascending=False).head(n).reset_index(name="trip_count")
 
     def maintenance_cost_by_bike_type(self) -> pd.Series:
-        return self.maintenance.groupby("bike_type")["cost_eur"].sum()
+        return self.maintenance.groupby("bike_type")["cost"].sum()
 
     def top_routes(self, n: int = 10) -> pd.DataFrame:
         counts = self.trips.groupby(["start_station_id", "end_station_id"]).size().reset_index(name="trip_count")
