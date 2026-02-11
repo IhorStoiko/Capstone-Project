@@ -51,7 +51,7 @@ MR5048,BK212,classic,2024-12-10,general_inspection,59.82,General Inspection for 
 MR5049,BK300,electric,2024-05-06,general_inspection,60.82,General Inspection for bike BK300
 MR5050,BK320,classic,2024-05-31,general_inspection,143.39,General Inspection for bike BK320
 MR5051,BK315,electric,2024-03-22,battery_replacement,88.34,Battery Replacement for bike BK315
-MR5052,BK317,electric,2024-06-18,battery_replacement,,Battery Replacement for bike BK317
+MR5052,BK317,electric,2024-06-18,battery_replacement,0.0,Battery Replacement for bike BK317
 MR5053,BK283,classic,2024-05-17,brake_adjustment,111.78,Brake Adjustment for bike BK283
 MR5054,BK333,electric,2024-05-10,battery_replacement,120.11,Battery Replacement for bike BK333
 MR5055,BK258,electric,2024-04-07,battery_replacement,107.85,Battery Replacement for bike BK258
@@ -66,7 +66,7 @@ MR5063,BK265,electric,2024-08-23,battery_replacement,220.64,Battery Replacement 
 MR5064,BK329,electric,2024-02-01,chain_lubrication,43.17,Chain Lubrication for bike BK329
 MR5065,BK320,electric,2024-06-08,battery_replacement,216.33,Battery Replacement for bike BK320
 MR5066,BK323,electric,2024-08-06,general_inspection,33.16,General Inspection for bike BK323
-MR5067,BK228,electric,2024-12-01,battery_replacement,,Battery Replacement for bike BK228
+MR5067,BK228,electric,2024-12-01,battery_replacement,0.0,Battery Replacement for bike BK228
 MR5068,BK329,electric,2024-07-24,brake_adjustment,129.1,Brake Adjustment for bike BK329
 MR5069,BK201,electric,2024-05-14,brake_adjustment,51.53,Brake Adjustment for bike BK201
 MR5070,BK238,electric,2024-10-17,tire_repair,44.44,Tire Repair for bike BK238
@@ -74,7 +74,7 @@ MR5071,BK312,electric,2024-12-17,general_inspection,22.37,General Inspection for
 MR5072,BK211,electric,2024-08-29,brake_adjustment,102.57,Brake Adjustment for bike BK211
 MR5073,BK265,electric,2024-03-02,battery_replacement,231.14,Battery Replacement for bike BK265
 MR5074,BK253,classic,2024-01-31,chain_lubrication,131.21,Chain Lubrication for bike BK253
-MR5075,BK235,classic,2024-11-03,brake_adjustment,,Brake Adjustment for bike BK235
+MR5075,BK235,classic,2024-11-03,brake_adjustment,0.0,Brake Adjustment for bike BK235
 MR5076,BK212,electric,2024-02-17,battery_replacement,246.24,Battery Replacement for bike BK212
 MR5077,BK235,classic,2024-04-28,chain_lubrication,114.65,Chain Lubrication for bike BK235
 MR5078,BK261,classic,2024-12-17,tire_repair,116.0,Tire Repair for bike BK261
@@ -86,7 +86,7 @@ MR5083,BK291,electric,2024-03-09,battery_replacement,188.98,Battery Replacement 
 MR5084,BK331,electric,2024-02-01,battery_replacement,115.15,Battery Replacement for bike BK331
 MR5085,BK227,classic,2024-06-22,tire_repair,22.75,Tire Repair for bike BK227
 MR5086,BK312,electric,2024-09-20,chain_lubrication,100.61,Chain Lubrication for bike BK312
-MR5087,BK315,electric,2024-12-17,chain_lubrication,,Chain Lubrication for bike BK315
+MR5087,BK315,electric,2024-12-17,chain_lubrication,0.0,Chain Lubrication for bike BK315
 MR5088,BK274,electric,2024-03-29,general_inspection,75.72,General Inspection for bike BK274
 MR5089,BK261,electric,2024-07-08,general_inspection,41.39,General Inspection for bike BK261
 MR5090,BK328,electric,2024-08-10,brake_adjustment,123.74,Brake Adjustment for bike BK328
@@ -126,7 +126,7 @@ MR5123,BK328,electric,2024-06-25,battery_replacement,248.6,Battery Replacement f
 MR5124,BK280,classic,2024-10-18,general_inspection,17.37,General Inspection for bike BK280
 MR5125,BK331,classic,2024-01-16,brake_adjustment,26.47,Brake Adjustment for bike BK331
 MR5126,BK295,electric,2024-08-04,brake_adjustment,13.65,Brake Adjustment for bike BK295
-MR5127,BK320,electric,2024-05-25,brake_adjustment,,Brake Adjustment for bike BK320
+MR5127,BK320,electric,2024-05-25,brake_adjustment,0.0,Brake Adjustment for bike BK320
 MR5128,BK261,classic,2024-03-26,chain_lubrication,98.31,Chain Lubrication for bike BK261
 MR5129,BK317,classic,2024-05-11,general_inspection,75.53,General Inspection for bike BK317
 MR5130,BK315,electric,2024-06-23,tire_repair,115.11,Tire Repair for bike BK315
@@ -148,13 +148,13 @@ MR5145,BK312,classic,2024-04-12,general_inspection,34.81,General Inspection for 
 MR5146,BK261,electric,2024-04-13,chain_lubrication,148.5,Chain Lubrication for bike BK261
 MR5147,BK262,electric,2024-10-21,tire_repair,60.74,Tire Repair for bike BK262
 MR5148,BK329,electric,2024-10-24,battery_replacement,243.35,Battery Replacement for bike BK329
-MR5149,BK228,classic,2024-12-05,tire_repair,,Tire Repair for bike BK228
+MR5149,BK228,classic,2024-12-05,tire_repair,0.0,Tire Repair for bike BK228
 MR5150,BK227,electric,2024-12-25,battery_replacement,164.32,Battery Replacement for bike BK227
 MR5151,BK226,electric,2024-11-01,brake_adjustment,96.14,Brake Adjustment for bike BK226
 MR5152,BK333,electric,2024-06-07,chain_lubrication,88.55,Chain Lubrication for bike BK333
 MR5153,BK250,electric,2024-07-23,brake_adjustment,94.22,Brake Adjustment for bike BK250
 MR5154,BK300,electric,2024-01-15,general_inspection,86.63,General Inspection for bike BK300
-MR5155,BK327,electric,2024-04-03,chain_lubrication,,Chain Lubrication for bike BK327
+MR5155,BK327,electric,2024-04-03,chain_lubrication,0.0,Chain Lubrication for bike BK327
 MR5156,BK251,classic,2024-04-06,brake_adjustment,10.16,Brake Adjustment for bike BK251
 MR5157,BK295,electric,2024-02-13,general_inspection,93.36,General Inspection for bike BK295
 MR5158,BK270,classic,2024-03-02,brake_adjustment,81.32,Brake Adjustment for bike BK270
@@ -170,7 +170,7 @@ MR5167,BK270,classic,2024-09-21,tire_repair,71.57,Tire Repair for bike BK270
 MR5168,BK336,classic,2024-08-15,brake_adjustment,119.35,Brake Adjustment for bike BK336
 MR5169,BK346,classic,2024-03-21,chain_lubrication,31.71,Chain Lubrication for bike BK346
 MR5170,BK285,electric,2024-10-30,brake_adjustment,124.61,Brake Adjustment for bike BK285
-MR5171,BK315,classic,2024-08-09,tire_repair,,Tire Repair for bike BK315
+MR5171,BK315,classic,2024-08-09,tire_repair,0.0,Tire Repair for bike BK315
 MR5172,BK307,electric,2024-02-29,tire_repair,121.29,Tire Repair for bike BK307
 MR5173,BK320,electric,2024-10-16,general_inspection,149.0,General Inspection for bike BK320
 MR5174,BK250,electric,2024-09-13,tire_repair,38.53,Tire Repair for bike BK250

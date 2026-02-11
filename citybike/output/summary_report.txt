@@ -1,0 +1,8 @@
+============================================================
+  CityBike — Summary Report
+============================================================
+
+--- Overall Summary ---
+  Total trips       : 1500
+  Total distance    : 11502.38 km
+  Avg duration      : 23.44 min

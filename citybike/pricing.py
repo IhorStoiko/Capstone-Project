@@ -56,7 +56,6 @@ class CasualPricing(PricingStrategy):
         self, duration_minutes: float, distance_km: float
     ) -> float:
         """Compute trip cost for casual users."""
-        # Total cost = unlock fee + per-minute charge + per-km charge
         return (
             self.UNLOCK_FEE
             + self.PER_MINUTE * duration_minutes
@@ -73,6 +72,7 @@ class MemberPricing(PricingStrategy):
         - €0.05 per km
     """
 
+    UNLOCK_FEE = 0.0  # Members have no unlock fee
     PER_MINUTE = 0.08
     PER_KM = 0.05
 
@@ -80,8 +80,7 @@ class MemberPricing(PricingStrategy):
         self, duration_minutes: float, distance_km: float
     ) -> float:
         """Compute trip cost for member users (no unlock fee)."""
-        # Member users get a reduced per-minute and per-km rate
-        return self.PER_MINUTE * duration_minutes + self.PER_KM * distance_km
+        return self.UNLOCK_FEE + self.PER_MINUTE * duration_minutes + self.PER_KM * distance_km
 
 
 class PeakHourPricing(PricingStrategy):
@@ -96,9 +95,7 @@ class PeakHourPricing(PricingStrategy):
         self, duration_minutes: float, distance_km: float
     ) -> float:
         """Compute trip cost during peak hours based on CasualPricing."""
-        # Calculate base cost using CasualPricing
         base_cost = CasualPricing().calculate_cost(duration_minutes, distance_km)
-        # Apply peak hour multiplier
         return base_cost * self.MULTIPLIER
 
 
@@ -117,31 +114,25 @@ class FreeRidePromotion(PricingStrategy):
         """Return 0 for short trips, otherwise use CasualPricing."""
         if duration_minutes <= self.MAX_FREE_MINUTES:
             return 0.0
-        # Otherwise use casual pricing
         return CasualPricing().calculate_cost(duration_minutes, distance_km)
 
 
 # ---------------------------------------------------------------------------
-# Example usage (for testing or main.py)
+# Example usage (for testing)
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    # Example trips
     duration = 25.0  # minutes
     distance = 5.0   # km
 
-    # Casual user
     casual_cost = CasualPricing().calculate_cost(duration, distance)
     print(f"Casual user cost: €{casual_cost:.2f}")
 
-    # Member user
     member_cost = MemberPricing().calculate_cost(duration, distance)
     print(f"Member user cost: €{member_cost:.2f}")
 
-    # Peak hour
     peak_cost = PeakHourPricing().calculate_cost(duration, distance)
     print(f"Peak hour cost: €{peak_cost:.2f}")
 
-    # Free ride promotion
     free_cost = FreeRidePromotion().calculate_cost(8, 2)
     print(f"Free ride (8 min): €{free_cost:.2f}")
