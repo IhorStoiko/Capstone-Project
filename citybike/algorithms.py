@@ -1,18 +1,7 @@
 """
 Custom sorting and searching algorithms.
 
-Provided:
-    - merge_sort
-    - benchmark_sort
 
-Students must implement:
-    - insertion_sort   — second sorting algorithm
-    - binary_search    — search on sorted data
-    - linear_search    — brute-force search for comparison
-    - benchmark_search — timing comparison for search algorithms
-
-Use timeit to measure execution times.
-Document the Big-O complexity of each algorithm.
 """
 
 import timeit

@@ -1,14 +1,3 @@
-"""
-Data analysis engine for the CityBike platform.
-
-Contains the BikeShareSystem class that orchestrates:
-    - CSV loading and cleaning
-    - Answering business questions using Pandas
-    - Generating summary reports
-
-Students should implement the cleaning logic and at least 10 analytics methods.
-"""
-
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -83,23 +72,23 @@ class BikeShareSystem:
         if self.trips is None:
             raise RuntimeError("Call load_data() first")
 
-        # --- Step 1: Remove duplicates ---
+        # --- Step: Remove duplicates ---
         self.trips = self.trips.drop_duplicates(subset=["trip_id"])
         self.stations = self.stations.drop_duplicates(subset=["station_id"])
         self.maintenance = self.maintenance.drop_duplicates(subset=["record_id"])
 
-        # --- Step 2: Parse dates ---
+        # --- Step: Parse dates ---
         self.trips["start_time"] = pd.to_datetime(self.trips["start_time"], errors="coerce")
         self.trips["end_time"] = pd.to_datetime(self.trips["end_time"], errors="coerce")
         self.maintenance["date"] = pd.to_datetime(self.maintenance["date"], errors="coerce")
         # Note: stations have no install_date in your dataset
 
-        # --- Step 3: Convert numeric columns ---
+        # --- Step: Convert numeric columns ---
         self.trips["duration_minutes"] = pd.to_numeric(self.trips["duration_minutes"], errors="coerce")
         self.trips["distance_km"] = pd.to_numeric(self.trips["distance_km"], errors="coerce")
         self.maintenance["cost"] = pd.to_numeric(self.maintenance["cost"], errors="coerce")
 
-        # --- Step 4: Handle missing values ---
+        # --- Step: Handle missing values ---
         self.trips["duration_minutes"] = self.trips["duration_minutes"].fillna(self.trips["duration_minutes"].median())
         self.trips["distance_km"] = self.trips["distance_km"].fillna(self.trips["distance_km"].median())
         self.trips["user_type"] = self.trips["user_type"].fillna("casual").str.lower().str.strip()
@@ -108,13 +97,10 @@ class BikeShareSystem:
         # For maintenance, fill missing cost with 0
         self.maintenance["cost"] = self.maintenance["cost"].fillna(0)
 
-        # --- Step 5: Remove invalid entries ---
+        # --- Step: Remove invalid entries ---
         self.trips = self.trips[self.trips["end_time"] >= self.trips["start_time"]]
 
-        # --- Step 6: Standardize categorical values ---
-        # Already done above when filling missing
-
-        # --- Step 7: Export cleaned datasets ---
+        # --- Step: Export cleaned datasets ---
         DATA_DIR.mkdir(exist_ok=True)
         self.trips.to_csv(DATA_DIR / "trips_clean.csv", index=False)
         self.stations.to_csv(DATA_DIR / "stations_clean.csv", index=False)

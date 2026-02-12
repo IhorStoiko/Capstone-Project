@@ -1,14 +1,5 @@
 """
 Matplotlib visualizations for the CityBike platform.
-
-Students should create at least 4 charts:
-    1. Bar chart — trips per station or revenue by user type
-    2. Line chart — monthly trip trend over time
-    3. Histogram — trip duration or distance distribution
-    4. Box plot — duration by user type or bike type
-
-All charts must have: title, axis labels, legend (where applicable).
-Export each chart as PNG to output/figures/.
 """
 
 import matplotlib.pyplot as plt
@@ -34,9 +25,7 @@ def _save_figure(fig: plt.Figure, filename: str) -> None:
 def plot_trips_per_station(trips: pd.DataFrame, stations: pd.DataFrame) -> None:
     """Bar chart showing the number of trips starting at each station.
 
-    Args:
-        trips: Cleaned trips DataFrame.
-        stations: Stations DataFrame (for station names).
+    
     """
     # Count trips per start_station_id, take top 10
     counts = (

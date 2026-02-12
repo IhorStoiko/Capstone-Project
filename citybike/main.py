@@ -1,17 +1,6 @@
 """
 CityBike — Bike-Sharing Analytics Platform
 ===========================================
-
-Entry point that orchestrates the full pipeline:
-    1. Load raw data
-    2. Inspect & clean data
-    3. Run analytics (business questions)
-    4. Run numerical computations
-    5. Generate visualizations
-    6. Export summary report
-
-Usage:
-    python main.py
 """
 
 from analyzer import BikeShareSystem
@@ -134,17 +123,7 @@ def main() -> None:
     )
     print(f"  Member revenue   : €{np.sum(member_fares):.2f}")
 
-    # Optionally, calculate peak hour fares
-    # peak_mask = (system.trips['start_time'].dt.hour >= 17) & (system.trips['start_time'].dt.hour <= 19)
-    # peak_trips = system.trips[peak_mask]
-    # peak_fares = calculate_fares(
-    #     durations=peak_trips["duration_minutes"].to_numpy(),
-    #     distances=peak_trips["distance_km"].to_numpy(),
-    #     per_minute=casual_strategy.PER_MINUTE * peak_strategy.MULTIPLIER,
-    #     per_km=casual_strategy.PER_KM * peak_strategy.MULTIPLIER,
-    #     unlock_fee=casual_strategy.UNLOCK_FEE * peak_strategy.MULTIPLIER,
-    # )
-
+    
     # ------------------------------
     # Step 5 — Visualizations
     # ------------------------------

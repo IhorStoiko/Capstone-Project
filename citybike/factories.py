@@ -1,12 +1,6 @@
 """
 Factory Pattern — create domain objects from raw CSV-row dictionaries.
 
-The factory functions hide which concrete subclass is instantiated,
-so the rest of the code never needs to import ClassicBike / ElectricBike etc.
-
-Students should:
-    - Complete create_user()
-    - Optionally add create_trip() and create_maintenance_record()
 """
 
 from datetime import datetime
@@ -26,19 +20,7 @@ from models import (
 def create_bike(data: dict) -> Bike:
     """Create a Bike (ClassicBike or ElectricBike) from a data dictionary.
 
-    Args:
-        data: A dict with at least 'bike_id' and 'bike_type'.
-
-    Returns:
-        A ClassicBike or ElectricBike instance.
-
-    Raises:
-        ValueError: If bike_type is unknown.
-
-    Example:
-        >>> bike = create_bike({"bike_id": "BK200", "bike_type": "electric"})
-        >>> isinstance(bike, ElectricBike)
-        True
+    
     """
     bike_type = data.get("bike_type", "").lower()
 

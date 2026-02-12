@@ -1,12 +1,6 @@
 """
 Pricing strategies for trip cost calculation (Strategy Pattern).
 
-Provides a common interface `PricingStrategy` and concrete implementations.
-
-Students should:
-    - Complete MemberPricing
-    - Implement PeakHourPricing
-    - Optionally add more strategies
 """
 
 from abc import ABC, abstractmethod

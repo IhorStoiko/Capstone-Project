@@ -1,8 +1,6 @@
 """
 Utility helpers for the CityBike platform.
 
-Provides validation, date parsing, and formatting functions.
-Keep I/O-free — these are pure helper functions.
 """
 
 import re
@@ -36,15 +34,7 @@ VALID_MAINTENANCE_TYPES = {
 def validate_positive(value: float, name: str = "value") -> float:
     """Ensure *value* is a positive number.
 
-    Args:
-        value: The number to check.
-        name: Name shown in the error message.
-
-    Returns:
-        The validated value.
-
-    Raises:
-        ValueError: If the value is not positive.
+    
     """
     if value <= 0:
         raise ValueError(f"{name} must be positive, got {value}")
